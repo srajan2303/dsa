@@ -23,6 +23,38 @@ B Tree	       O(log N)	O(log N)	O(log N)	O(log N)
 Red Black Tree	O(log N)	O(log N)	O(log N)	O(log N)
 
 
+BINARY TREE:
+
+Searching: For searching element 2, we have to traverse all elements (assuming we do breadth first traversal). Therefore, searching in binary tree has worst case complexity of O(n).
+
+Insertion: For inserting element as left child of 2, we have to traverse all elements. Therefore, insertion in binary tree has worst case complexity of O(n).
+
+Deletion: For deletion of element 2, we have to traverse all elements to find 2 (assuming we do breadth first traversal). Therefore, deletion in binary tree has worst case complexity of O(n).
+
+LIST OF OPERATIONS IN HEAP:
+
+Insertion:
+Best Case: O(1)
+Worst Case: O(logN)
+Average Case: O(logN)
+
+Deletion:
+Best Case: O(1)
+Worst Case: O(logN)
+Average Case: O(logN)
+
+Searching:
+Best Case: O(1)
+Worst Case: O(N)
+Average Case: O(N)
+Getting max value & min value
+
+Sorting O(NlogN)
+
+Creating a Heap O(NlogN)
+
+Heapify O(N)
+
 
 Time Complexity for Searching element in MAP :
 Time complexity for searching elements in std::map is O(log n). Even in worst case it will be O(log n) because elements are stored internally as Balanced Binary Search tree (BST).
@@ -31,6 +63,7 @@ Whereas, in std::unordered_map best case time complexity for searching is O(1). 
 
 
 ****SAME FOR SET****
+
 
 
 
