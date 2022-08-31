@@ -1,0 +1,51 @@
+****ITERATIVE****
+class Solution {
+public:
+    vector<int> postorderTraversal(TreeNode* root) {
+     vector<int>v;
+     stack<TreeNode*> ans;//reverses the order in which elements are traversed
+        stack<TreeNode*>s;
+        s.push(root);
+        if(root==NULL)return v;
+        while(!s.empty()){
+            root=s.top();
+            s.pop();
+            ans.push(root);
+            if(root->left!=NULL)s.push(root->left);
+            if(root->right!=NULL)s.push(root->right);
+                
+           }
+
+                while(!ans.empty()){
+                    v.push_back(ans.top()->val);
+                    ans.pop();
+                }
+                
+            
+        return v;
+    }
+};
+
+
+
+****RECURSIVE****
+class Solution {
+public:
+    vector<int> postorderTraversal(TreeNode* root) {
+
+     vector<int> ans;
+    
+         postorder(root,ans);
+        
+         return ans;
+
+    }
+    
+    void postorder(TreeNode* root,vector<int>& ans){
+        if(root){
+            postorder(root->left,ans);
+            postorder(root->right,ans);
+            ans.push_back(root->val);
+        }
+    }
+};
