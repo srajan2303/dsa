@@ -1,0 +1,41 @@
+****ITERATIVE****
+class Solution {
+
+public:
+    vector<int> inorderTraversal(TreeNode* root) {
+        stack<TreeNode*>s;
+        vector<int>ans;
+        // if(root==NULL)return ans;
+        while(!s.empty()||root){
+            while(root){
+                s.push(root);
+                root=root->left;
+            }
+            root=s.top();
+            s.pop();
+            ans.push_back(root->val);
+            root=root->right;
+            
+        }
+        return ans;
+    }
+};
+
+
+****RECUSRSION****
+class Solution {
+
+    void inorder(TreeNode* root, vector<int>& ans) {
+        if (root) {  
+        inorder(root->left, ans);     
+        ans.push_back(root->val);              
+        inorder(root->right, ans);  
+        }
+    }
+public:
+    vector<int> inorderTraversal(TreeNode* root) {
+        vector<int> ans;
+        inorder(root, ans);
+        return ans;   
+    }
+};
