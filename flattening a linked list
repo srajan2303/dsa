@@ -1,0 +1,31 @@
+   Node* merge(Node* left,Node* right){
+    Node* temp=new Node(0);
+    Node* ans=temp;
+    while(left!=NULL && right!=NULL){
+        if(left->data<right->data){
+            temp->bottom=left;
+            temp=temp->bottom;
+            left=left->bottom;
+        }
+        else{
+            temp->bottom=right;
+            temp=temp->bottom;
+            right=right->bottom;
+        }
+    }
+    if(left) temp->bottom=left;
+    else temp->bottom=right;
+    
+    return ans->bottom;
+}    
+    
+    
+    
+Node *flatten(Node *root)
+{
+   if(root==NULL||root->next==NULL)return root;
+   
+   root->next=flatten(root->next);
+   root = merge(root,root->next);
+   return root;
+}
